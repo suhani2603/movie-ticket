@@ -1,0 +1,16 @@
+/* index.css - global styles */
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+} 
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  /* CHANGE: Removed global black background */
+  background-color: transparent; 
+}

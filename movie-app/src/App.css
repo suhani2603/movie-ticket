@@ -1,0 +1,203 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* THIS IS NOW THE DEFAULT BACKGROUND FOR ALL PAGES EXCEPT HOME */
+  background: #0d0d0d; 
+  
+  font-family: 'Arial', sans-serif;
+  color: white;
+  text-align: center;
+  /* padding removed previously for full coverage */
+}
+
+/* ... rest of App.css remains the same ... */
+/* Common button style */
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Home page */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+ .home-container h1 {
+  font-size: 3rem;
+  color: #ffcc00;
+} 
+
+.movie-card {
+  background: #1f1f1f;
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(255, 255, 0, 0.3);
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  background: #2e2e2e;
+}
+/* Cinemas page */
+.cinema-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.cinema-card {
+  background: #2b2b2b;
+  padding: 25px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.cinema-card:hover {
+  transform: scale(1.05);
+  background: red;
+}
+
+/* Shows page */
+.show-card {
+  background: black;
+  padding: 25px 35px;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.show-card:hover {
+  transform: scale(1.05);
+  background: red;
+}
+
+/* Seats page */
+
+.seat-grid-row {
+  display: grid !important;
+  /* Define enough columns (e.g., 20) to handle the widest row (12-14 seats + aisles) */
+  /* 'min-content' ensures each column is only as wide as the seat/spacer inside it */
+  grid-template-columns: repeat(20, min-content) !important; 
+  gap: 0px !important; /* No gaps between grid cells */
+}
+
+
+.seat {
+  width: 38px; 
+  height: 38px; 
+  margin: 4px; 
+  border-radius: 4px; 
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem; 
+  font-weight: 500;
+  user-select: none;
+  cursor: pointer; 
+  
+  background-color: #333333; 
+  color: #aaaaaa; 
+  border: 1px solid #555555; 
+
+
+  box-shadow: none;
+  border-bottom: 1px solid #555555;
+  transform: none;
+  
+  transition: all 0.15s ease-in-out; 
+}
+
+.seat:not(.reserved):hover {
+    background-color: #444444; /* Darker hover effect */
+    transform: none; /* No 3D lift */
+}
+
+/* --- 1. Premium/Gold Seats (Type P/A) --- */
+.seat.premium { 
+    border-color: #FFD700; /* Gold border for premium section */
+    background-color: #4B4B4B; /* Distinct dark background */
+    color: #FFD700; /* Gold text */
+}
+
+
+
+/* --- Selected State (The key visual, prominent border on dark background) --- */
+.seat.selected { 
+    background-color: #008000; /* Green interior when selected */
+    color: #ffffff; /* White number */
+    font-weight: bold;
+    
+    
+    border: 2px solid #66BB6A; 
+    
+    
+    transform: none; 
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.4); 
+}
+
+
+.seat.reserved { 
+    background-color: #1A1A1A !important; 
+    cursor: not-allowed; 
+    opacity: 1; 
+    color: #555555; 
+    border-color: #333333 !important; 
+    transform: none;
+    box-shadow: none; 
+}
+/* Payment page */
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.payment-box {
+  background: #2c2c2c;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(255, 255, 255, 0.2);
+  width: 350px;
+}
+
+.payment-box p {
+  font-size: 1.2rem;
+  margin: 8px 0;
+}
+
+.payment-box button {
+  margin-top: 10px;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  background-color: #ff4040;
+  color: white;
+}
+
+.payment-box button:hover {
+  background-color: #e63939;
+  transform: scale(1.05);
+}
